@@ -1,3 +1,33 @@
-<p>
-  series-detail works!
-</p>
+<mat-grid-list cols="6" rowHeight="100px">
+
+  <mat-grid-tile [colspan]="2" [rowspan]="5" style="background-color: white">
+      <div>
+          <img class="sebcard" src="{{serie.poster_path}}">
+      </div>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="4" [rowspan]="5" style="background-color: white">
+      <div>
+          <mat-tab-group>
+              <mat-tab label="Overview"> {{serie.overview}}</mat-tab>
+              <mat-tab label="Information"> 
+                  Rate: {{serie.vote_average}}
+                  <h4>Genres:</h4>
+                  <div *ngFor="let genre of serie.genres">
+                      {{genre.name}}
+                  </div>
+                  <h4>Produced for:</h4>
+                  <div *ngFor="let proCom of serie.production_companies">
+                          {{proCom.name}}
+                  </div>
+                  <h4> Created by:</h4>
+                  <div *ngFor="let creator of serie.created_by">
+                      {{creator.name}}
+                  </div><br>
+                  Total episodes: {{serie.number_of_episodes}} <br>
+                  Seasons: {{serie.number_of_seasons}}
+              </mat-tab>
+          </mat-tab-group>
+      </div>         
+  </mat-grid-tile>
+
+</mat-grid-list>
