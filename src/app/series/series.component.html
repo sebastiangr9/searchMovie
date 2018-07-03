@@ -1,0 +1,11 @@
+
+<mat-toolbar color="primary">
+  <input matInput type="text" [(ngModel)]="nameSerie" placeholder="Search Serie" >
+  <button mat-raised-button color="primary" (click)="searchSerie()">Search</button>
+</mat-toolbar>
+
+<div fxLayout="row wrap" style="background-color: black">
+  <div class="container" *ngFor="let serie of series" (click)="onClick(serie.id)">
+      <img  src="{{serie.poster_path}}">
+  </div>
+</div> 

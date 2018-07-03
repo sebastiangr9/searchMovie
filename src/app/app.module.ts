@@ -28,6 +28,8 @@ import { HttpModule } from '@angular/http';
 import { ActorDetailsComponent } from './actor-details/actor-details.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { RootComponent } from './root/root.component';
+import { SeriesComponent } from './series/series.component';
+import { SeriesDetailComponent } from './series-detail/series-detail.component';
 
 const appRoutes: Routes=[
   {
@@ -35,12 +37,16 @@ const appRoutes: Routes=[
     component: RootComponent
   },
   {
-    path:"movieDetails/:id",
+    path:'movieDetails/:id',
     component: MovieDetailsComponent
   },
   {
-    path:"actorDetails/:id",
+    path:'actorDetails/:id',
     component: ActorDetailsComponent
+  },
+  {
+    path: 'seriesDetails/:id',
+    component: SeriesDetailComponent
   },
   {
     path:'movies',
@@ -49,6 +55,10 @@ const appRoutes: Routes=[
   {
     path:'actors',
     component: ActorsComponent
+  },
+  {
+    path:'series',
+    component: SeriesComponent
   }
 ]
 
@@ -60,7 +70,9 @@ const appRoutes: Routes=[
     PrincipalComponent,
     ActorDetailsComponent,
     MovieDetailsComponent,
-    RootComponent
+    RootComponent,
+    SeriesComponent,
+    SeriesDetailComponent
   ],
   imports: [
     BrowserModule,
