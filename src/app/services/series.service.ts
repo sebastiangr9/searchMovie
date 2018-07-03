@@ -21,7 +21,6 @@ export class SeriesService {
     .pipe(
       map(
         (data: any)=>{
-          // return data
         return data.results.map((item)=>{
           let urlImg='/assets/movieNull.png'
           if(item.hasOwnProperty('poster_path')){
@@ -46,7 +45,6 @@ export class SeriesService {
     .pipe(
       map(
         (data: any)=>{
-          // return data
         return data.results.map((item)=>{
           let urlImg='/assets/movieNull.png'
           if(item.hasOwnProperty('poster_path')){

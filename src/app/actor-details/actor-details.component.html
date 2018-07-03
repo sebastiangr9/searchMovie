@@ -15,8 +15,6 @@
         </div>
 </mat-card>
 
-
-
 <h2> Movies:</h2>
 <div fxLayout="row wrap" style="background-color: black">
     <div class="container" *ngFor="let movie of moviesActor" (click)="onClick(movie.id)">
@@ -24,14 +22,3 @@
         <div class="bottom-left" style="background-color: black">{{movie.character}}</div>
     </div>
 </div> 
-
-
-
-<!-- 
-<pre>
-{{actor|json}}
-</pre>
-
-<pre>
-  {{moviesActor|json}}
-</pre> -->
