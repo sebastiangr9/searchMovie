@@ -1,26 +1,21 @@
-<mat-grid-list cols="6" rowHeight="100px">
-
-    <mat-grid-tile [colspan]="2" [rowspan]="5" style="background-color: white">
-        <div>
-            <img class="sebcard" src="{{actor.profile_path}}">
+<mat-card fxLayout="row">
+        <img fxFlexOffset="1%" src="{{actor.profile_path}}">
+        <div fxFlexOffset="2%">
+            <mat-card-content fxFlexOffset="2%">
+                <mat-tab-group>
+                    <mat-tab label="Biography"> {{actor.biography}}</mat-tab>
+                    <mat-tab label="Information"> 
+                        <h4>Name:</h4>
+                        {{actor.name}}
+                        <h4>Birthday:</h4>
+                        {{actor.birthday}}
+                    </mat-tab>
+                </mat-tab-group>
+            </mat-card-content>
         </div>
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="4" [rowspan]="5" style="background-color: white">
-        <div>
-            <mat-tab-group>
-                <mat-tab label="Biography"> {{actor.biography}}</mat-tab>
-                <mat-tab label="Information"> 
-                    <h4>Name:</h4>
-                    {{actor.name}}
-                    <h4>Birthday:</h4>
-                    {{actor.birthday}}
+</mat-card>
 
-                </mat-tab>
-            </mat-tab-group>
-        </div>         
-    </mat-grid-tile>
 
-</mat-grid-list>
 
 <h2> Movies:</h2>
 <div fxLayout="row wrap" style="background-color: black">

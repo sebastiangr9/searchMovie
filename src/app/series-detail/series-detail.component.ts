@@ -10,6 +10,7 @@ import { SeriesDetailsService } from '../services/series-details.service';
 export class SeriesDetailComponent implements OnInit {
 
   public serie:any;
+  public actors:any;
 
   constructor(
     private serieDeatailservice: SeriesDetailsService,
@@ -30,6 +31,22 @@ export class SeriesDetailComponent implements OnInit {
         }
         )
       })
+
+    this.route.params.subscribe(params=>
+      {
+        let idSerie:number = +params['id'];
+        this.serieDeatailservice.getDetail(idSerie).subscribe(
+        (data)=>{
+          this.actors=data
+        },
+        (error)=>{
+          console.log(error)
+        }
+        )
+      })
   }
 
+  onClick(actor){
+    this.router.navigate(['/actorDetails', actor])
+  }
 }

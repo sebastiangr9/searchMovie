@@ -10,13 +10,15 @@ export class MovieDetailsService {
   private img: string = "http://image.tmdb.org/t/p/original";
   private url3: string = "https://api.themoviedb.org/3/movie/";
   private key: string = "?api_key=977cda5d9bfac0a6b0252ef0272785b6";
+  private url: string = "https://api.themoviedb.org/3/movie/";
+  private part: string = "/credits?api_key=977cda5d9bfac0a6b0252ef0272785b6";
   
   constructor(
     private http: HttpClient
   ) { }
 
   getActorsMovie(idMovie){
-    return this.http.get('https://api.themoviedb.org/3/movie/' + idMovie + '/credits?api_key=977cda5d9bfac0a6b0252ef0272785b6')
+    return this.http.get(this.url + idMovie + this.part)
     .pipe(
       map(
         (data:any)=>{
