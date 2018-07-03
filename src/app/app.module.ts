@@ -95,8 +95,6 @@ const appRoutes: Routes=[
     MatInputModule,
     MatCardModule,
     NgxGalleryModule
-    // ,
-    // AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

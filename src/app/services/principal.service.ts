@@ -19,7 +19,6 @@ export class PrincipalService {
     .pipe(
       map(
         (data: any)=>{
-          // return data
         return data.results.map((item)=>{
           return {
             vote_count: item.vote_count ,
