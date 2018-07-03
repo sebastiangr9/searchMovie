@@ -1,0 +1,11 @@
+
+<mat-toolbar color="primary">
+<input matInput type="text" [(ngModel)]="nameMovie" placeholder="Search Movie" >
+<button mat-raised-button color="primary" (click)="searchMovie()">Search</button>
+</mat-toolbar>
+
+<div fxLayout="row wrap" style="background-color: black">
+        <div class="container" *ngFor="let Movie of Movie" (click)="onClick(Movie.id)">
+            <img  src="{{Movie.poster}}">
+        </div>
+</div> 
