@@ -10,6 +10,7 @@ export class SeriesService {
   private url: string="https://api.themoviedb.org/3/search/tv?api_key=977cda5d9bfac0a6b0252ef0272785b6&query=";
   private img: string = "http://image.tmdb.org/t/p/original";
   private url2: string = "https://api.themoviedb.org/3/tv/top_rated?api_key=977cda5d9bfac0a6b0252ef0272785b6"
+  
   constructor(
     private http: HttpClient
   ) { }

@@ -1,35 +1,29 @@
-<mat-grid-list cols="6" rowHeight="100px">
-
-    <mat-grid-tile [colspan]="2" [rowspan]="5" style="background-color: white">
-        <div>
-            <img class="sebcard" src="{{movie.poster_path}}">
-        </div>
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="4" [rowspan]="5" style="background-color: white">
-        <div>
-            <mat-tab-group>
-                <mat-tab label="Overview"> {{movie.overview}}</mat-tab>
-                <mat-tab label="Information"> 
-                    <h4>Genres:</h4>
-                    <div *ngFor="let genre of movie.genres">
-                        {{genre.name}}
-                    </div>
-                    <br>
-                    <h4>Produced for:</h4>
-                    <div *ngFor="let proCom of movie.production_companies">
+<mat-card fxLayout="row">
+        <img fxFlexOffset="1%" src="{{movie.poster_path}}">
+        <div fxFlexOffset="2%">
+            <mat-card-content fxFlexOffset="2%">
+                <mat-tab-group>
+                    <mat-tab label="Overview"> {{movie.overview}}</mat-tab>
+                    <mat-tab label="Information"> 
+                        <h4>Genres:</h4>
+                        <div *ngFor="let genre of movie.genres">
+                            {{genre.name}}
+                        </div>
+                        
+                        <h4>Produced for:</h4>
+                        <div *ngFor="let proCom of movie.production_companies">
                             {{proCom.name}}
-                    </div>
-                    <br>
-                    <h4> Countries:</h4>
-                    <div *ngFor="let proCoun of movie.production_countries">
-                        {{proCoun.name}}
-                    </div>
-                </mat-tab>
-            </mat-tab-group>
-        </div>         
-    </mat-grid-tile>
-
-</mat-grid-list>
+                        </div>
+                        
+                        <h4> Countries:</h4>
+                        <div *ngFor="let proCoun of movie.production_countries">
+                            {{proCoun.name}}
+                        </div>
+                    </mat-tab>
+                </mat-tab-group>
+            </mat-card-content>
+        </div>
+</mat-card>
 
 <h2> Actors:</h2>
 <div fxLayout="row wrap" style="background-color: black">

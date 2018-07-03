@@ -10,6 +10,8 @@ export class SeriesDetailsService {
   private url: string = "https://api.themoviedb.org/3/tv/";
   private part: string = "?api_key=977cda5d9bfac0a6b0252ef0272785b6";
   private img: string = "http://image.tmdb.org/t/p/original";
+  private url2: string = "https://api.themoviedb.org/3/tv/"
+  private part2 : string = "/credits?api_key=977cda5d9bfac0a6b0252ef0272785b6";
 
   constructor(
     private http: HttpClient
@@ -34,6 +36,30 @@ export class SeriesDetailsService {
           vote_average: data.vote_average
         }
       })
+    );
+  }
+
+  getDetail(idserie:number){
+    return this.http.get(this.url2 + idserie + this.part2)
+    .pipe(
+      map(
+        (data:any)=>{
+          return data.cast.map((item)=>{
+            let urlImg='/assets/movieNull.png'
+            if(item.hasOwnProperty('profile_path')){
+              if(item.profile_path){
+                urlImg=this.img+item.profile_path
+              }
+            }
+            return {
+              id: item.id,
+              name: item.name,
+              character: item.character,
+              profile_path: urlImg
+            }
+          });
+        }
+      )
     );
   }
 }
