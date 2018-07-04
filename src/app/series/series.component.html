@@ -1,7 +1,12 @@
 
-<mat-toolbar color="primary">
-  <input matInput type="text" [(ngModel)]="nameSerie" placeholder="Search Serie" >
-  <button mat-raised-button color="primary" (click)="searchSerie()">Search</button>
+<mat-toolbar color="primary" style="height: 5%;">
+<mat-form-field style="width: 90%;">
+  <input matInput [(ngModel)]="nameSerie" placeholder="Search Serie" (keydown.enter)="searchSerie()">
+</mat-form-field>
+  <button mat-raised-button color="primary" (click)="searchSerie()">
+    <i class="material-icons mdx2" style="color: white">search</i>
+    Search
+  </button>
 </mat-toolbar>
 
 <div fxLayout="row wrap" style="background-color: black">

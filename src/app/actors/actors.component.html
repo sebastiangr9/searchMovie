@@ -1,7 +1,13 @@
 
-<mat-toolbar color="primary">
-<input matInput type="text" [(ngModel)]="nameActor" placeholder="Search Actor">
-<button mat-raised-button color="primary" (click)="searchActor()">Search</button>
+<mat-toolbar color="primary" style="height: 5%;">
+
+<mat-form-field style="width: 90%;">
+    <input matInput [(ngModel)]="nameActor" placeholder="Search Actor" (keydown.enter)="searchActor()">
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="searchActor()">
+    <i class="material-icons mdx2" style="color: white">search</i>
+    Search
+</button>
 </mat-toolbar>
 
 <div fxLayout="row wrap" style="background-color: black">
